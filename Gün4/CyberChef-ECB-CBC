@@ -1,0 +1,20 @@
+Bu uygulama çalışmasında, aynı girdiler sonucu ECB modunda ilk iki blokun aynı çıktıyı verirken CBC modu çıktısında ilk iki blokun birbirinden 
+farklı olduğunu gözlemledim. Bunun sebebi CBC'de ikinci blokun doğrudan AES'e verilmemesidir. Yani ikinci plaintext bloğu aynı olsa bile, önce 
+birinci ciphertext bloğuyla XORlandığı için AES'e farklı bir veri girer. Bu yüzden ikinci ciphertext de farklı olur.
+
+Mode: ECB
+Key: 00112233445566778899AABBCCDDEEFF
+IV: 0102030405060708090A0B0C0D0E0F10
+Input : ABCDEFGHIJKLMNOPABCDEFGHIJKLMNOP
+Output: 4f602fce94ca980bb41cdca772b36a84
+        4f602fce94ca980bb41cdca772b36a84
+        00657ea140655a44782747705d422fad
+
+
+Mode: CBC
+Key: 00112233445566778899AABBCCDDEEFF
+IV: 0102030405060708090A0B0C0D0E0F10
+Input: ABCDEFGHIJKLMNOPABCDEFGHIJKLMNOP
+Output: 22d40881fbfad0d50dc0ad0b16d28b26
+        25f44e2d00bbcad930d89ed53e5cf2d0
+        e28e21c93d512743138bcf96b9455f17
