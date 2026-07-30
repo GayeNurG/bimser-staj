@@ -1,2 +1,0 @@
-GitBash üzerinden OpenSSL kullanarak 2048 bit RSA anahtar çifti oluşturdum. Private key'den public key'i ayrı bir .pem dosyasına çıkardım ve her
-iki dosyanın içeriğini inceledim.
