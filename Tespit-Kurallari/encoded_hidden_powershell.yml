@@ -1,0 +1,35 @@
+title: Encoded or Hidden PowerShell Execution
+id: 4b2d9e1c-6a3f-4d8b-a1c2-9e7f6a5b4c3d
+status: experimental
+description: Detects PowerShell executed with encoded command and/or hidden window parameters, a common obfuscation and evasion pattern
+references:
+    - internal Case 2 investigation, Gun 35
+    - Gun 29 Mandiant FIN7 okumasi
+author: Gaye Nur Gunes
+date: 2026-09-11
+modified: 2026-09-18
+tags:
+    - attack.execution
+    - attack.t1059.001
+    - attack.t1027
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_img:
+        Image|endswith: '\powershell.exe'
+    selection_flags:
+        CommandLine|contains:
+            - '-enc'
+            - '-EncodedCommand'
+            - '-w hidden'
+            - '-windowstyle hidden'
+            - '-nop'
+    filter_known_admin_tools:
+        ParentImage|endswith:
+            - '\CcmExec.exe'
+            - '\MMC.exe'
+    condition: selection_img and selection_flags and not filter_known_admin_tools
+falsepositives:
+    - Legitimate administrative scripts using encoded commands (GPO, SCCM, scheduled automation); filter_known_admin_tools excludes the known SCCM client process (CcmExec.exe) and MMC-launched admin consoles as a starting point, but this list should be extended per-environment
+level: high
