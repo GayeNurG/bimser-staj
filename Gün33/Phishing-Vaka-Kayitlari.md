@@ -29,7 +29,7 @@ Microsoft kimliğine bürünen, sahte "olağandışı oturum açma" uyarısı. H
 
 **Karar:**
 
-Oltalama (phishing), kimlik doğrulama tamamen başarısız (spf/dkim/dmarc hepsi olumsuz).  
+Oltalama (phishing), e-posta kimlik doğrulama kontrolleri başarısız: SPF none, DKIM none, DMARC permerror. 
 From/Return-Path uyuşmuyor, hedef kimlik bilgisi toplamaya yönelik sosyal mühendislik. 
 
 Kullanıcıya bildirim yapıldı, ek aksiyon gerekmiyor (dosya/kimlik bilgisi paylaşımı yok).
@@ -53,11 +53,11 @@ Trustwallet kimliğine bürünen, meşru mail altyapısı (Mailgun/Gorgias) üze
 
 **Gözlemlenebilirler:**
 
-•  From domain: emails.gorgias\[.\]com  
-•  Return-Path domain: gorgias\[.\]io  
-•  Gönderen IP: 143.55.227\[.\]147  
-•  Yönlendirici: usertest.sciquest\[.\]com  
-•  Asıl hedef: drop-coin-availablenow.site44\[.\]com
+•  From domain: emails.gorgias[.]com  
+•  Return-Path domain: gorgias[.]io  
+•  Gönderen IP: 143.55.227[.]147  
+•  Yönlendirici: usertest.sciquest[.]com  
+•  Asıl hedef: drop-coin-availablenow.site44[.]com
 
 **Zenginleştirme Sonuçları:**
 
@@ -68,7 +68,7 @@ Trustwallet kimliğine bürünen, meşru mail altyapısı (Mailgun/Gorgias) üze
 **Karar:**
 
 Doğrulanmış oltalama, dış kaynak (VirusTotal) doğrulaması var.   
-DMARC uyuşmazlığı (spf/dkim pass, dmarc fail) tek başına yeterli sinyaldi, dış doğrulama bunu teyit etti. 
+DMARC fail, From/Return-Path uyumsuzluğu ve hedef URL'nin VirusTotal'daki phishing tespiti birlikte değerlendirildi.
 
 Kullanıcıya bildirim yapıldı; cüzdan bilgisi girildiyse ek aksiyon gerekir (bkz. kullanıcı bildirimi).
 
@@ -91,10 +91,10 @@ BNB/Binance airdrop kimliğine bürünen kripto oltalaması. Gerçek Microsoft 3
 
 **Gözlemlenebilirler:**
 
-•  From/Return-Path domain: yx2nqoz.onmicrosoft\[.\]com  
-•  Gönderen IP: 40.107.223\[.\]119  
-•  Yönlendirici: click.pstmrk\[.\]it  
-•  Asıl hedef: appbnb.web\[.\]app
+•  From/Return-Path domain: yx2nqoz.onmicrosoft[.]com  
+•  Gönderen IP: 40.107.223[.]119  
+•  Yönlendirici: click.pstmrk[.]it  
+•  Asıl hedef: appbnb.web[.]app
 
 **Zenginleştirme Sonuçları:**
 
