@@ -1,0 +1,23 @@
+title: LSASS Memory Dump via comsvcs.dll MiniDump (Volt Typhoon LOTL)
+id: 6c8e2f4a-1d3b-4a9e-b7c5-2f8a9d1e3b4c
+status: experimental
+description: Detects use of the legitimate comsvcs.dll MiniDump export to dump LSASS process memory, a living-off-the-land credential access technique used by Volt Typhoon
+references:
+    - CISA AA24-038A, Gun 35 oglenden sonra okumasi
+author: Gaye Nur Gunes
+date: 2026-09-11
+tags:
+    - attack.credential-access
+    - attack.t1003.001
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        CommandLine|contains|all:
+            - 'comsvcs'
+            - 'MiniDump'
+    condition: selection
+falsepositives:
+    - Legitimate use of comsvcs.dll for actual crash dump collection by administrators (rare, should be verified against known IT maintenance windows)
+level: high

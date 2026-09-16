@@ -1,0 +1,22 @@
+title: Office Application Spawning Mshta
+id: 7f3c1a2e-8b4d-4e6a-9c3f-1a2b3c4d5e6f
+status: experimental
+description: Detects a Microsoft Word process spawning mshta.exe, a known LOLBin proxy execution technique
+references:
+    - internal Case 2 investigation, Gun 35
+author: Gaye Nur Gunes
+date: 2026-09-11
+tags:
+    - attack.execution
+    - attack.t1218.005
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        ParentImage|endswith: '\WINWORD.EXE'
+        Image|endswith: '\mshta.exe'
+    condition: selection
+falsepositives:
+    - Unknown legitimate document templates invoking mshta (rare)
+level: high
