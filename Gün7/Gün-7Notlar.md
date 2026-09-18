@@ -1,136 +1,129 @@
-OSI MODEL KATMANLARI
+# OSI Model Katmanları
 
 OSI (Open Systems Interconnection) modeli, bilgisayar ağlarında iletişimin nasıl gerçekleştiğini tanımlar. Bu modelin temel amacı, farklı üreticilerin donanım ve yazılımlarının ortak bir standart üzerinden birbiriyle sorunsuz iletişim kurmasını sağlamaktır.
 
-Physical Layer(Fiziksel Katman):
+## Physical Layer (Fiziksel Katman)
 
-Verilerin fiziksel ortam (kablo, fiber optik, radyo sinyalleri) üzerinden bit olarak taşınmasını tanımlar. Elektriksel, mekanik ve fonksiyonel özellikleri belirler. Hub, ağ kartı (NIC), kablolar, tekrarlayıcılar.
+Verilerin fiziksel ortam (kablo, fiber optik, radyo sinyalleri) üzerinden bit olarak taşınmasını tanımlar. Elektriksel, mekanik ve fonksiyonel özellikleri belirler.
 
-Data Link Layer(Veri Bağlantısı Katmanı):
+**Örnekler:** Hub, ağ kartı (NIC), kablolar, tekrarlayıcılar.
 
-Fiziksel katmana erişim kurallarını belirler ve uç düğümler arasında güvenli veri transferi sağlar. Hata kontrolü ve çerçeveleme işlemlerini yapar. İki alt katmana ayrılır: MAC (media access control-donanım adresleme) ve LLC (logical link control-akış kontrolü ve hata tespiti). Ethernet, Wi-Fi, Switch, Bridge.
+## Data Link Layer (Veri Bağlantısı Katmanı)
 
- Network Layer(Ağ Katmanı):
+Fiziksel katmana erişim kurallarını belirler ve uç düğümler arasında güvenli veri transferi sağlar. Hata kontrolü ve çerçeveleme işlemlerini yapar. İki alt katmana ayrılır: MAC (media access control, donanım adresleme) ve LLC (logical link control, akış kontrolü ve hata tespiti).
 
-Farklı ağlar arasında veri paketlerinin yönlendirilmesini ve mantıksal adreslemeyi (IP) sağlar. Verinin hedefe ulaşması için en ekonomik yolu seçer. IP (IPv4, IPv6), ICMP, ARP, Router.
+**Örnekler:** Ethernet, Wi-Fi, Switch, Bridge.
 
-Transport Layer(Taşıma Katmanı):
+## Network Layer (Ağ Katmanı)
 
-Verinin uçtan uca güvenli, hatasız ve doğru sıralı iletiminden sorumludur. Büyük verileri segmentlere ayırır ve alıcıda tekrar birleştirir. TCP (bağlantı temelli), UDP (bağlantısız).
+Farklı ağlar arasında veri paketlerinin yönlendirilmesini ve mantıksal adreslemeyi (IP) sağlar. Verinin hedefe ulaşması için en ekonomik yolu seçer.
 
-Session Layer(Oturum Katmanı):
+**Örnekler:** IP (IPv4, IPv6), ICMP, ARP, Router.
 
-İki bilgisayar arasındaki uygulamaların bağlantısını kurar, yönetir ve sonlandırır. Haberleşmenin organize edilmesini ve senkronizasyonunu sağlar. NetBIOS, RPC, SMB, NFS, SQL 
+## Transport Layer (Taşıma Katmanı)
 
-Presentation Layer(Sunum Katmanı):
+Verinin uçtan uca güvenli, hatasız ve doğru sıralı iletiminden sorumludur. Büyük verileri segmentlere ayırır ve alıcıda tekrar birleştirir.
 
-Verilerin uygulama katmanına sunulmadan önce formatlanması, sıkıştırılması ve şifrelenmesi işlemlerini yapar. Farklı sistemlerin veriyi aynı şekilde anlamasını sağlar (örneğin ASCII'den EBCDIC'ye dönüşüm). JPEG, MPEG, GIF, SSL/TLS, TIFF, ASCII.
+**Örnekler:** TCP (bağlantı temelli), UDP (bağlantısız).
 
-Application Layer(Uygulama Katmanı):
+## Session Layer (Oturum Katmanı)
 
-Kullanıcıya en yakın katmandır; ağ servislerini kullanacak olan programlarla (tarayıcılar, e-posta istemcileri vb.) doğrudan etkileşim kurar. HTTP, HTTPS, FTP, SMTP, DNS, SSH, Telnet.
+İki bilgisayar arasındaki uygulamaların bağlantısını kurar, yönetir ve sonlandırır. Haberleşmenin organize edilmesini ve senkronizasyonunu sağlar.
 
+**Örnekler:** NetBIOS, RPC, SMB, NFS, SQL.
 
-Encapsulation(Kapsülleme):
+## Presentation Layer (Sunum Katmanı)
 
-Ağ iletişiminde bir bilgisayardan diğerine veri gönderilirken, verinin üst katmanlardan alt katmanlara doğru ilerlemesi ve her bir katmanda veriye o katmana özgü belirli bilgilerin eklenmesi işlemidir. 
+Verilerin uygulama katmanına sunulmadan önce formatlanması, sıkıştırılması ve şifrelenmesi işlemlerini yapar. Farklı sistemlerin veriyi aynı şekilde anlamasını sağlar (örneğin ASCII'den EBCDIC'ye dönüşüm).
 
+**Örnekler:** JPEG, MPEG, GIF, SSL/TLS, TIFF, ASCII.
 
-TCP/IP Katmanları:
+## Application Layer (Uygulama Katmanı)
 
-Uygulama Katmanı (Application Layer):
+Kullanıcıya en yakın katmandır; ağ servislerini kullanacak olan programlarla (tarayıcılar, e-posta istemcileri vb.) doğrudan etkileşim kurar.
 
-Bu katman, OSI modelindeki Uygulama, Sunum ve Oturum katmanlarının görevlerini tek başına üstlenir.
+**Örnekler:** HTTP, HTTPS, FTP, SMTP, DNS, SSH, Telnet.
 
-Bilgisayarda çalışan uygulama yazılımlarına hizmet sunar ve düğümden düğüme uygulama iletişimini sağlar. Kullanıcı ile ağ arasındaki arabirimi oluşturur. HTTP, FTP, SMTP, DNS, Telnet, SSH.
+## Encapsulation (Kapsülleme)
 
-Taşıma Katmanı (Transport Layer / Host-to-Host):
+Ağ iletişiminde bir bilgisayardan diğerine veri gönderilirken, verinin üst katmanlardan alt katmanlara doğru ilerlemesi ve her bir katmanda veriye o katmana özgü belirli bilgilerin eklenmesi işlemidir.
 
-Uç birimler arasındaki iletişimin güvenilirliğini yönetir. Verilerin hatasız tesliminden, akış kontrolünden ve büyük veri parçalarının segmentlere ayrılmasından sorumludur. TCP (Bağlantılı/Güvenilir) ve UDP (Bağlantısız/Hızlı). 
+# TCP/IP Katmanları
 
-İnternet Katmanı (Internet Layer):
+## Uygulama Katmanı (Application Layer)
 
-Paketlerin farklı ağlar arasında mantıksal iletimini ve yönlendirilmesini sağlar. Paketlerin kaynaktan hedefe en uygun yolla gitmesinden sorumludur. IP (IPv4, IPv6), ICMP, ARP. 
+Bu katman, OSI modelindeki Uygulama, Sunum ve Oturum katmanlarının görevlerini tek başına üstlenir. Bilgisayarda çalışan uygulama yazılımlarına hizmet sunar ve düğümden düğüme uygulama iletişimini sağlar. Kullanıcı ile ağ arasındaki arabirimi oluşturur.
 
- Ağ Erişim Katmanı (Network Access Layer / Link) 
+**Örnekler:** HTTP, FTP, SMTP, DNS, Telnet, SSH.
 
-Bu katman, OSI modelindeki Fiziksel ve Veri Bağlantısı katmanlarını birleştirir 
-Verinin fiziksel ağ (kablo, fiber, radyo sinyalleri) üzerinden iletilmesi için gerekli donanım ve protokolleri tanımlar. Cihaz ile ağ arasında paketleri gönderecek bağlantının kurulmasını sağlar. Ethernet, Wi-Fi, Token Ring. 
+## Taşıma Katmanı (Transport Layer / Host-to-Host)
 
+Uç birimler arasındaki iletişimin güvenilirliğini yönetir. Verilerin hatasız tesliminden, akış kontrolünden ve büyük veri parçalarının segmentlere ayrılmasından sorumludur.
 
-OSI ve TCP/IP Arasındaki Temel Farklar 
+**Örnekler:** TCP (Bağlantılı/Güvenilir) ve UDP (Bağlantısız/Hızlı).
 
-OSI 7 katmanlıyken, TCP/IP genellikle 4 katmanlıdır
-OSI eğitimi amaçlı bütünsel bir bakış açısı sunan bir referans modelidir; TCP/IP ise mevcut protokollerin tanımlanmasıyla ortaya çıkan uygulanmış bir modeldir.
-OSI'de her katman kesin kurallarla tanımlanmıştır, TCP/IP daha esnektir ve bazı protokoller katmanlar arasında geçiş yapabilir.
+## İnternet Katmanı (Internet Layer)
 
+Paketlerin farklı ağlar arasında mantıksal iletimini ve yönlendirilmesini sağlar. Paketlerin kaynaktan hedefe en uygun yolla gitmesinden sorumludur.
 
-Verinin İletim Aşamaları
+**Örnekler:** IP (IPv4, IPv6), ICMP, ARP.
 
-Uygulama Katmanı: Kullanıcı tarayıcıya bir site yazar veya bir mesaj gönderir. Oluşan bilgiye veri (data) denir. 
+## Ağ Erişim Katmanı (Network Access Layer / Link)
 
-Taşıma Katmanı (TCP/UDP): Veriye bir TCP veya UDP başlığı eklenir. Bu başlıkta hangi uygulamaya gideceği (port numarası), sıralama ve hata kontrolü gibi bilgiler bulunur. 
+Bu katman, OSI modelindeki Fiziksel ve Veri Bağlantısı katmanlarını birleştirir. Verinin fiziksel ağ (kablo, fiber, radyo sinyalleri) üzerinden iletilmesi için gerekli donanım ve protokolleri tanımlar. Cihaz ile ağ arasında paketleri gönderecek bağlantının kurulmasını sağlar.
 
-Ağ Katmanı (IP): Pakete IP başlığı eklenir. Bu başlık sayesinde paketin kaynak IP ve hedef IP adresleri belirlenir, yani internette nereye gideceği anlaşılır. 
+**Örnekler:** Ethernet, Wi-Fi, Token Ring.
 
-Veri Bağlantı Katmanı (Ethernet): IP paketine MAC adreslerini içeren Ethernet başlığı ve hata kontrolü için FCS (trailer) eklenir. Böylece paket yerel ağda iletilmeye hazır olur. 
+# OSI ve TCP/IP Arasındaki Temel Farklar
 
-Fiziksel Katman: Paket artık elektrik sinyali, ışık sinyali veya radyo dalgası şeklinde kablo ya da Wi-Fi üzerinden gönderilir. 
+OSI 7 katmanlıyken, TCP/IP genellikle 4 katmanlıdır. OSI eğitimi amaçlı bütünsel bir bakış açısı sunan bir referans modelidir; TCP/IP ise mevcut protokollerin tanımlanmasıyla ortaya çıkan uygulanmış bir modeldir. OSI'de her katman kesin kurallarla tanımlanmıştır, TCP/IP daha esnektir ve bazı protokoller katmanlar arasında geçiş yapabilir.
 
-Sunucuya ulaştığında, sunucu işlemleri ters sırayla yapar.
-Gönderirken her katman veriye kendi başlığını ekler (kapsülleme / encapsulation), alıcıda ise her katman kendi başlığını çıkarır (kapsül açma / de-encapsulation). Böylece veri güvenli ve doğru hedefe ulaşmış olur. 
+# Verinin İletim Aşamaları
 
+1. **Uygulama Katmanı:** Kullanıcı tarayıcıya bir site yazar veya bir mesaj gönderir. Oluşan bilgiye veri (data) denir.
+2. **Taşıma Katmanı (TCP/UDP):** Veriye bir TCP veya UDP başlığı eklenir. Bu başlıkta hangi uygulamaya gideceği (port numarası), sıralama ve hata kontrolü gibi bilgiler bulunur.
+3. **Ağ Katmanı (IP):** Pakete IP başlığı eklenir. Bu başlık sayesinde paketin kaynak IP ve hedef IP adresleri belirlenir, yani internette nereye gideceği anlaşılır.
+4. **Veri Bağlantı Katmanı (Ethernet):** IP paketine MAC adreslerini içeren Ethernet başlığı ve hata kontrolü için FCS (trailer) eklenir. Böylece paket yerel ağda iletilmeye hazır olur.
+5. **Fiziksel Katman:** Paket artık elektrik sinyali, ışık sinyali veya radyo dalgası şeklinde kablo ya da Wi-Fi üzerinden gönderilir.
 
+Sunucuya ulaştığında, sunucu işlemleri ters sırayla yapar. Gönderirken her katman veriye kendi başlığını ekler (kapsülleme / encapsulation), alıcıda ise her katman kendi başlığını çıkarır (kapsül açma / de-encapsulation). Böylece veri güvenli ve doğru hedefe ulaşmış olur.
 
-TCP'nin Üçlü El Sıkışması (Three-Way Handshake) 
+# TCP'nin Üçlü El Sıkışması (Three-Way Handshake)
 
-TCP (Transmission Control Protocol) bağlantı odaklı bir protokoldür. Bu nedenle veri gönderilmeden önce istemci (client) ile sunucu (server) arasında güvenilir bir bağlantı kurulması gerekir. Bu bağlantının kurulma sürecine Three-Way Handshake (Üçlü El Sıkışma) denir. 
-Three-Way Handshake'in amacı:
-İstemci ve sunucunun haberleşmeye hazır olduğunu doğrulamak.
-Başlangıç sıra numaralarını (Initial Sequence Number - ISN) senkronize etmek.
-Güvenilir bir TCP bağlantısı oluşturmak.
+TCP (Transmission Control Protocol) bağlantı odaklı bir protokoldür. Bu nedenle veri gönderilmeden önce istemci (client) ile sunucu (server) arasında güvenilir bir bağlantı kurulması gerekir. Bu bağlantının kurulma sürecine Three-Way Handshake (Üçlü El Sıkışma) denir.
 
-Önemli kontrol bitleri:
-SYN (Synchronize): Sıra numaralarını senkronize etmek ve bağlantı başlatmak için kullanılır.
-ACK (Acknowledgment): Alınan paketin onaylandığını belirtir.
-FIN (Finish): Göndericinin artık veri göndermeyeceğini belirtir.
-RST (Reset): Bağlantıyı sıfırlar.
-PSH (Push): Verinin bekletilmeden uygulamaya iletilmesini ister.
-URG (Urgent): Acil veri bulunduğunu belirtir.
+**Three-Way Handshake'in amacı:**
+- İstemci ve sunucunun haberleşmeye hazır olduğunu doğrulamak.
+- Başlangıç sıra numaralarını (Initial Sequence Number, ISN) senkronize etmek.
+- Güvenilir bir TCP bağlantısı oluşturmak.
 
-Bağlantı Kurulma Aşamaları
+## Önemli Kontrol Bitleri
 
-1. SYN
-İstemci → Sunucu
-İstemci bağlantı kurmak istediğini belirtmek için SYN paketi gönderir.
-Bu pakette:
-Başlangıç sıra numarası (ISN) bulunur.
-ACK değeri 0'dır çünkü henüz karşı taraftan bir paket alınmamıştır.
-İsteğe bağlı olarak MSS (Maximum Segment Size) bilgisi de gönderilebilir. MSS, gönderen tarafın almak istediği maksimum TCP veri boyutunu belirtir.
+| Bit | Anlamı |
+|---|---|
+| SYN (Synchronize) | Sıra numaralarını senkronize etmek ve bağlantı başlatmak için kullanılır |
+| ACK (Acknowledgment) | Alınan paketin onaylandığını belirtir |
+| FIN (Finish) | Göndericinin artık veri göndermeyeceğini belirtir |
+| RST (Reset) | Bağlantıyı sıfırlar |
+| PSH (Push) | Verinin bekletilmeden uygulamaya iletilmesini ister |
+| URG (Urgent) | Acil veri bulunduğunu belirtir |
 
-2. SYN-ACK
-Sunucu → İstemci
-Sunucu SYN paketini aldıktan sonra:
-İstemcinin isteğini ACK ile onaylar.
-Aynı zamanda kendi SYN paketini göndererek kendi sıra numarasını bildirir.
+## Bağlantı Kurulma Aşamaları
 
-3. ACK
-İstemci → Sunucu
-İstemci sunucunun SYN-ACK paketini aldıktan sonra son olarak ACK paketi gönderir.
-Bu ACK ile:
-Sunucunun sıra numarası onaylanır.
-TCP bağlantısı ESTABLISHED durumuna geçer.
-Artık uygulama verileri gönderilmeye başlanabilir.
+1. **SYN (İstemci → Sunucu):** İstemci bağlantı kurmak istediğini belirtmek için SYN paketi gönderir. Bu pakette başlangıç sıra numarası (ISN) bulunur, ACK değeri 0'dır çünkü henüz karşı taraftan bir paket alınmamıştır. İsteğe bağlı olarak MSS (Maximum Segment Size) bilgisi de gönderilebilir; MSS, gönderen tarafın almak istediği maksimum TCP veri boyutunu belirtir.
+2. **SYN-ACK (Sunucu → İstemci):** Sunucu SYN paketini aldıktan sonra istemcinin isteğini ACK ile onaylar, aynı zamanda kendi SYN paketini göndererek kendi sıra numarasını bildirir.
+3. **ACK (İstemci → Sunucu):** İstemci sunucunun SYN-ACK paketini aldıktan sonra son olarak ACK paketi gönderir. Bu ACK ile sunucunun sıra numarası onaylanır, TCP bağlantısı ESTABLISHED durumuna geçer, artık uygulama verileri gönderilmeye başlanabilir.
 
-Port Nedir?
-Port, bir bilgisayarda çalışan uygulamaların birbirinden ayırt edilmesini sağlayan mantıksal iletişim noktasıdır.
-Bir IP adresi hangi bilgisayara gidileceğini gösterirken, port numarası o bilgisayardaki hangi uygulamaya gidileceğini gösterir.
+## Port Nedir?
 
+Port, bir bilgisayarda çalışan uygulamaların birbirinden ayırt edilmesini sağlayan mantıksal iletişim noktasıdır. Bir IP adresi hangi bilgisayara gidileceğini gösterirken, port numarası o bilgisayardaki hangi uygulamaya gidileceğini gösterir.
 
-TCP ve UDP farkları:
+## TCP ve UDP Farkları
 
-TCP, bağlantı kurarken UDP, bağlantı kurmaz.
-TCP, verinin ulaşıp ulaşmadığını kontrol ederken UDP kontrol etmez.
-TCP, kayıp paketleri tekrar gönderirken UDP tekrar göndermez.
-TCP, paket sırasını korurken UDP bu sırayı garanti etmez. 
-TCP, UDP’ye göre daha yavaştır.
+| | TCP | UDP |
+|---|---|---|
+| Bağlantı | Bağlantı kurar | Bağlantı kurmaz |
+| Teslimat kontrolü | Verinin ulaşıp ulaşmadığını kontrol eder | Kontrol etmez |
+| Kayıp paket | Kayıp paketleri tekrar gönderir | Tekrar göndermez |
+| Sıralama | Paket sırasını korur | Bu sırayı garanti etmez |
+| Hız | Daha yavaş | Daha hızlı |
